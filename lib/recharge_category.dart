@@ -24,13 +24,13 @@ class Product {
 
 const categories = [
   ProductCategory(
-    name: "Order Again",
+    name: "POPULAR PLANS",
     products: [
       Product(
         name: 'df',
         description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-        price: 20.00,
+        price: 299.00,
       ),
       Product(
         name: 'df',
@@ -53,7 +53,7 @@ const categories = [
     ],
   ),
   ProductCategory(
-    name: "Pick for You",
+    name: "NO DAILY LIMIT",
     products: [
       Product(
         name: 'Awsome p2 ',
@@ -82,7 +82,7 @@ const categories = [
     ],
   ),
   ProductCategory(
-    name: "Roaming",
+    name: "4G DATA",
     products: [
       Product(
         name: '34545',
@@ -111,7 +111,7 @@ const categories = [
     ],
   ),
   ProductCategory(
-    name: "Data",
+    name: "INTL ROAMING",
     products: [
       Product(
         name: '34545',
@@ -140,7 +140,7 @@ const categories = [
     ],
   ),
   ProductCategory(
-    name: "TopUp",
+    name: "ISD",
     products: [
       Product(
         name: '34545',
