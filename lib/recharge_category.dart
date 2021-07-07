@@ -1,6 +1,6 @@
 class ProductCategory {
-  final String name;
-  final List<Product> products;
+  final String? name;
+  final List<Product>? products;
 
   const ProductCategory({
     this.name,
@@ -9,10 +9,10 @@ class ProductCategory {
 }
 
 class Product {
-  final String name;
-  final String description;
-  final double price;
-  final String image;
+  final String? name;
+  final String? description;
+  final double? price;
+  final String? image;
 
   const Product({
     this.name,

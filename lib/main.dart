@@ -126,7 +126,7 @@ class TabWidget extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(
-            categoryTab.productCategory.name,
+            categoryTab.productCategory.name!,
             style: TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.bold,
@@ -141,7 +141,7 @@ class TabWidget extends StatelessWidget {
 
 class CategoryWidgetItem extends StatelessWidget {
   const CategoryWidgetItem(this.productCategory);
-  final ProductCategory productCategory;
+  final ProductCategory? productCategory;
 
   @override
   Widget build(BuildContext context) {
@@ -150,7 +150,7 @@ class CategoryWidgetItem extends StatelessWidget {
       color: Colors.white,
       alignment: Alignment.centerLeft,
       child: Text(
-        productCategory.name,
+        productCategory!.name!,
         style: TextStyle(
           color: _blueColor,
           fontSize: 16,
@@ -163,7 +163,7 @@ class CategoryWidgetItem extends StatelessWidget {
 
 class ProductWidgetItem extends StatelessWidget {
   const ProductWidgetItem(this.product);
-  final Product product;
+  final Product? product;
 
   @override
   Widget build(BuildContext context) {
@@ -189,7 +189,7 @@ class ProductWidgetItem extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      product.name,
+                      product!.name!,
                       style: TextStyle(
                         color: _blueColor,
                         fontSize: 14,
@@ -200,7 +200,7 @@ class ProductWidgetItem extends StatelessWidget {
                       height: 5,
                     ),
                     Text(
-                      product.description,
+                      product!.description!,
                       maxLines: 2,
                       style: TextStyle(
                         color: _blueColor,
@@ -211,7 +211,7 @@ class ProductWidgetItem extends StatelessWidget {
                       height: 5,
                     ),
                     Text(
-                      '\$${product.price.toStringAsFixed(2)}',
+                      '\$${product!.price!.toStringAsFixed(2)}',
                       style: TextStyle(
                         color: _greenColor,
                         fontSize: 14,

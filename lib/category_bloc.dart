@@ -10,7 +10,7 @@ const productHeight = 110.0;
 class CategoryBloc with ChangeNotifier {
   List<CategoryTab> tabs = [];
   List<Item> items = [];
-  TabController tabController;
+  TabController? tabController;
   ScrollController scrollController = ScrollController();
   bool _listen = true;
 
@@ -25,12 +25,12 @@ class CategoryBloc with ChangeNotifier {
       final category = categories[i];
 
       if (i > 0) {
-        offsetFrom += categories[i - 1].products.length * productHeight;
+        offsetFrom += categories[i - 1].products!.length * productHeight;
       }
 
       if (i < categories.length - 1) {
         offsetTo =
-            offsetFrom + categories[i + 1].products.length * productHeight;
+            offsetFrom + categories[i + 1].products!.length * productHeight;
       } else {
         offsetTo = double.infinity;
       }
@@ -45,8 +45,8 @@ class CategoryBloc with ChangeNotifier {
       );
 
       items.add(Item(productCategory: category));
-      for (int j = 0; j < category.products.length; j++) {
-        final product = category.products[j];
+      for (int j = 0; j < category.products!.length; j++) {
+        final product = category.products![j];
         items.add(Item(product: product));
       }
     }
@@ -62,7 +62,7 @@ class CategoryBloc with ChangeNotifier {
             scrollController.offset <= tab.offsetTo &&
             !tab.selected) {
           onCategorySelected(i, animationRequired: false);
-          tabController.animateTo(i);
+          tabController!.animateTo(i);
           break;
         }
       }
@@ -95,7 +95,7 @@ class CategoryBloc with ChangeNotifier {
   void dispose() {
     scrollController.removeListener(_onScrollListener);
     scrollController.dispose();
-    tabController.dispose();
+    tabController!.dispose();
     super.dispose();
   }
 }
@@ -107,10 +107,10 @@ class CategoryTab {
   final double offsetTo;
 
   CategoryTab({
-    @required this.productCategory,
-    @required this.selected,
-    @required this.offsetFrom,
-    @required this.offsetTo,
+    required this.productCategory,
+    required this.selected,
+    required this.offsetFrom,
+    required this.offsetTo,
   });
 
   CategoryTab copyWith(bool selected) => CategoryTab(
@@ -127,8 +127,8 @@ class Item {
     this.product,
   });
 
-  final ProductCategory productCategory;
-  final Product product;
+  final ProductCategory? productCategory;
+  final Product? product;
 
   bool get isCategory => productCategory != null;
 }
