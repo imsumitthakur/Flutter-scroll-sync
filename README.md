@@ -14,7 +14,7 @@ Demo of Flutter Recharge list and flutter scroll sync demo
 
 ### Screenshots
 
-<img src="sceenshot_1.png" height="300em" /> <img src="sceenshot_2.png" height="300em" /> <img src="sceenshot_3.png" height="300em" />
+<img src="sceenshot_1.png" height="500em" /> <img src="sceenshot_2.png" height="500em" /> <img src="sceenshot_3.png" height="500em" />
 
 
 For help getting started with Flutter, view our online
